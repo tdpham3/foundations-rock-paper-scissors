@@ -43,24 +43,20 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        playerSelection = 
-            prompt("Rock, Paper, or Scissors? Quit or Q to exit").toLowerCase();
+        playerSelection = prompt("Rock, Paper, or Scissors? Quit or Q to exit").toLowerCase();
         if (exit_choices.includes(playerSelection)) {
             break;
         }
         while (!(choices.includes(playerSelection))) {
             console.log(`Choice: ${playerSelection}`)
-            playerSelection = 
-                prompt("Invalid result: Choose Rock, Paper, or Scissors").toLowerCase();
+            playerSelection = prompt("Invalid result: Choose Rock, Paper, or Scissors").toLowerCase();
         }
         console.log(playRound(playerSelection, computerPlay()));
     }
     if (player_score > computer_score) {
-        console.log(`You won! Your final score is ${player_score}. 
-            Computer score is ${computer_score}`)
+        console.log(`You won! Your final score is ${player_score}. Computer score is ${computer_score}`)
     } else if (player_score < computer_score) {
-        console.log(`You lost. Your final score is ${player_score}. 
-            Computer score is ${computer_score}`)
+        console.log(`You lost. Your final score is ${player_score}. Computer score is ${computer_score}`)
     } else {
         console.log(`The final result is a tie. Score: ${player_score}`)
     }
